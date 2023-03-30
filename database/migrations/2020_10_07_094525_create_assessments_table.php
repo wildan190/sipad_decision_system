@@ -15,10 +15,10 @@ class CreateAssessmentsTable extends Migration
     {
         Schema::create('assessments', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->unsignedBigInteger('employe_id');
+            $table->unsignedBigInteger('media_id');
             $table->unsignedBigInteger('criteria_id');
             $table->integer('weight');
-            $table->foreign('employe_id')->references('id')->on('employes')->onDelete('cascade');
+            $table->foreign('media_id')->references('id')->on('media')->onDelete('cascade');
             $table->foreign('criteria_id')->references('id')->on('criterias')->onDelete('cascade');
             $table->timestamps();
         });
