@@ -22,16 +22,16 @@ class Assessment extends Model
     }
     public static function dss_saw(){
         $criterias = Criteria::orderBy('criteria_code','Asc')->has('assessment')->with('sub_criteria')->get();
-        $employes = Employe::orderBy('id','Asc')->has('assessment')->with('assessment')->get(); 
+        $media = Media::orderBy('id','Asc')->has('assessment')->with('assessment')->get(); 
         $arr = [];
         $score=[];
         $minmax =  self::getMaxMin($criterias);
-        foreach($employes as $index => $employe){
+        foreach($media as $index => $media){
             $arr[$index] =[
-                'full_name'=>$employe->full_name
+                'full_name'=>$media->full_name
             ];
              foreach($criterias as $key => $criteria){
-                 foreach($employe->assessment as $assessment){
+                 foreach($media->assessment as $assessment){
                     if($assessment->criteria_id==$criteria->id){
                         $arr[$index]['criteria'][$criteria->criteria_code]=[
                             'name'=>$criteria->name,
