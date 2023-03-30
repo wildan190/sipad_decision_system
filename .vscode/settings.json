@@ -1,0 +1,15 @@
+{
+    "editor.fontSize": 16,
+    "window.zoomLevel": 0.1,
+    "workbench.colorTheme": "Dracula",
+    "workbench.iconTheme": "helium-icon-theme",
+    "terminal.integrated.fontSize": 16,
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "[javascript]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode",
+        "editor.formatOnSave": true,
+    },
+    "[php]": {
+        "editor.defaultFormatter": "bmewburn.vscode-intelephense-client"
+    }
+}
