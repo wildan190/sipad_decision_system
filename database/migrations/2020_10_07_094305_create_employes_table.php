@@ -13,12 +13,12 @@ class CreateEmployesTable extends Migration
      */
     public function up()
     {
-        Schema::create('employes', function (Blueprint $table) {
+        Schema::create('media', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('full_name');
-            $table->enum('gender', ['Male', 'Female']);
-            $table->string('birth_place');
-            $table->date('birth_date');
+            $table->string('media_name');
+            //$table->enum('gender', ['Male', 'Female']);
+            $table->string('size');
+           // $table->date('birth_date');
             $table->string('address');
             $table->string('position')->default('admin');
             $table->timestamps();
@@ -32,6 +32,6 @@ class CreateEmployesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('employes');
+        Schema::dropIfExists('media');
     }
 }
