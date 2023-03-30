@@ -36,12 +36,12 @@ Route::middleware(['auth.basic'])->prefix('dashboard')->group(function(){
     Route::post('assessment/store','AssessmentController@store')->name('assessment.store');
     Route::get('assessment/export','AssessmentController@export')->name('assessment.export');
 
-    Route::get('employe','EmployeController@index')->name('employe');
-    Route::get('employe/create','EmployeController@create')->name('employe.create');
-    Route::post('employe/store','EmployeController@store')->name('employe.store');
-    Route::get('employe/{id}','EmployeController@show')->name('employe.show');
-    Route::get('employe/{id}/edit','EmployeController@edit')->name('employe.edit');
-    Route::put('employe/{id}/update','EmployeController@update')->name('employe.update');
-    Route::delete('employe/{id}/delete','EmployeController@destroy')->name('employe.delete');
+    Route::get('Media','MediaController@index')->name('Media');
+    Route::get('Media/create','MediaController@create')->name('Media.create');
+    Route::post('Media/store','MediaController@store')->name('Media.store');
+    Route::get('Media/{id}','MediaController@show')->name('Media.show');
+    Route::get('Media/{id}/edit','MediaController@edit')->name('Media.edit');
+    Route::put('Media/{id}/update','MediaController@update')->name('Media.update');
+    Route::delete('Media/{id}/delete','MediaController@destroy')->name('Media.delete');
     
 });
