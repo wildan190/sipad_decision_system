@@ -2,37 +2,44 @@
 
 @section('content')
 <div class="d-sm-flex align-items-center justify-content-between mb-4">
-    <h1 class="h3 mb-0 text-gray-800">Employe</h1>
+    <h1 class="h3 mb-0 text-gray-800">Media</h1>
   </div>
     <div class="row justify-content-center">
         <div class="col-lg-8">
             <div class="card shadow-sm mb-4">
-                <div class="card-header font-weight-bold text-primary">New Employe
+                <div class="card-header font-weight-bold text-primary">New Record
                 </div>
 
                 <div class="card-body">
                     <div class="table-responsive">
                         <form action="{{route('employe.store')}}" method="POST">
                             @csrf
-                                <div class="form-group">
-                                  <label for="full_name">Full Name</label>
+                                <!--<div class="form-group">
+                                  <label for="full_name">Media Name</label>
                                   <input type="text" name="full_name" class="form-control" id="full_name" aria-describedby="full_nameHelp">
-                                </div>
+                                </div>-->
                                 <div class="form-group">
-                                  <label for="gender">Gender</label>
-                                  <select name="gender" class="form-control" id="gender">
+                                  <label for="gender">Media Type</label>
+                                  <select name="media_name" class="form-control" id="media_name">
                                     <option value='Male'>Male</option>
                                     <option value='Female'>Female</option>
                                   </select>
                                 </div>
                                 <div class="form-group">
+                                  <label for="gender">Size Media</label>
+                                  <select name="size" class="form-control" id="size">
+                                    <option value='Male'>Male</option>
+                                    <option value='Female'>Female</option>
+                                  </select>
+                                </div>
+                                <!--<div class="form-group">
                                   <label for="birth_place">Place Of Birth</label>
                                   <input type="text" name="birth_place" class="form-control" id="birth_place" aria-describedby="birth_placeHelp">
                                 </div>
                                 <div class="form-group">
                                     <label for="birth_date">Date Of Birth</label>
                                     <input type="date" name="birth_date" class="form-control" id="birth_date" aria-describedby="birth_dateHelp">
-                                </div>
+                                </div>-->
                                 <div class="form-group">
                                     <label for="address">Address</label>
                                     <textarea name="address" class="form-control" id="address" aria-describedby="addressHelp"></textarea>
