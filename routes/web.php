@@ -15,7 +15,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-//Auth::routes();
+Auth::routes();
 
 
 Route::middleware(['auth.basic'])->prefix('dashboard')->group(function(){
