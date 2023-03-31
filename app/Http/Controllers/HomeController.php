@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Employe;
+use App\Media;
 use App\Criteria;
 use App\SubCriteria;
 use App\Assessment;
@@ -26,16 +26,16 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $employe = Employe::get();
-        $employe = count($employe);
-        $assessment_success =  count(Employe::has('assessment')->get());
-        $assessment_pending =  count(Employe::doesntHave('assessment')->get());
+        $media = Media::get();
+        $media = count($media);
+        $assessment_success =  count(Media::has('assessment')->get());
+        $assessment_pending =  count(Media::doesntHave('assessment')->get());
         $criteria=Criteria::get();
         $criteria = count($criteria);
 
         $sub_criteria=SubCriteria::get();
         $sub_criteria = count($sub_criteria);
 
-        return view('dashboard.admin.home',compact('criteria','sub_criteria','employe','assessment_success','assessment_pending'));
+        return view('dashboard.admin.home',compact('criteria','sub_criteria','media','assessment_success','assessment_pending'));
     }
 }

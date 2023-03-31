@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Media;
-class EmployeController extends Controller
+class MediaController extends Controller
 {
     //
     public function index(){
@@ -29,12 +29,12 @@ class EmployeController extends Controller
             return redirect()->route('media.create')->withErrors('Add New Data Failed');
             
         }
-        return redirect()->route('employe')->withSuccess('Add New Data Success');
+        return redirect()->route('media')->withSuccess('Add New Data Success');
     }
 
     public function edit($id){
         $media = Media::where('id',$id)->first();
-        return view('dashboard.admin.employe.edit',compact('media'));
+        return view('dashboard.admin.media.edit',compact('media'));
 
     }
     public function update($id,Request $request){
