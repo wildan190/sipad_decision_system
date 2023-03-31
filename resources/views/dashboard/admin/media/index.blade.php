@@ -24,7 +24,7 @@
                                     <th>Birth Date</th>-->
                                     <th>Address</th>
                                     <th>Position</th>
-                                    <th>Action</th>
+                                    <!--<th>Action</th>-->
                                 </tr>
                             </thead>
                             <tbody>
@@ -37,7 +37,7 @@
                                 <td>{{$media->birth_date}}</td>-->
                                 <td>{{$media->address}}</td>
                                 <td>{{$media->position}}</td>
-                                <td>
+                                <!--<td>
                                 <a href="{{route('media.show',['id'=>$media->id])}}" class="btn btn-sm btn-primary"><i class="fas fa-th-list"></i></a>
                                     <a href="/dashboard/media/{{$media->id}}/edit" class="btn btn-sm btn-warning"><i class="fas fa-edit"></i></a>
                                     <form action="/dashboard/media/{{$media->id}}/delete" method="post" style="display:inline;">
@@ -45,7 +45,7 @@
                                         @method('DELETE')
                                         <button type="submit" class="btn btn-sm btn-danger float" onclick="return confirm('Yakin?')"><i class="fas fa-trash"></i></button>
                                       </form>
-                                </td>
+                                </td>-->
                                 </tr>
                                 @endforeach
                             </tbody>

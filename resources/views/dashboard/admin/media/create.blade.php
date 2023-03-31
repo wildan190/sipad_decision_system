@@ -19,17 +19,18 @@
                                   <input type="text" name="full_name" class="form-control" id="full_name" aria-describedby="full_nameHelp">
                                 </div>-->
                                 <div class="form-group">
-                                  <label for="gender">Media Type</label>
+                                  <label for="media_name">Media Type</label>
                                   <select name="media_name" class="form-control" id="media_name">
-                                    <option value='Male'>Male</option>
-                                    <option value='Female'>Female</option>
+                                    <option value='Billboard'>Billboard</option>
+                                    <option value='VideoTron'>VideoTron</option>
+                                    <option value='Banner'>Banner</option>
                                   </select>
                                 </div>
                                 <div class="form-group">
-                                  <label for="gender">Size Media</label>
+                                  <label for="size">Size Media</label>
                                   <select name="size" class="form-control" id="size">
-                                    <option value='Male'>Male</option>
-                                    <option value='Female'>Female</option>
+                                    <option value='12x4'>12x4</option>
+                                    <option value='8x20'>8x20</option>
                                   </select>
                                 </div>
                                 <!--<div class="form-group">
