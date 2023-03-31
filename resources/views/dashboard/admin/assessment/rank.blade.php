@@ -22,7 +22,7 @@
                        @foreach ($arr as $index => $result)
                         <tr>
                             <td>{{$index+1}}</td>
-                            <td>{{$result['full_name']}}</td>
+                            <td>{{$result['media_name']}}</td>
                             @foreach ($result['criteria'] as $key => $criteria)
                             <td>
                                 {{$criteria['result']}}

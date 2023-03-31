@@ -28,7 +28,7 @@ class Assessment extends Model
         $minmax =  self::getMaxMin($criterias);
         foreach($media as $index => $media){
             $arr[$index] =[
-                'full_name'=>$media->full_name
+                'media_name'=>$media->media_name
             ];
              foreach($criterias as $key => $criteria){
                  foreach($media->assessment as $assessment){

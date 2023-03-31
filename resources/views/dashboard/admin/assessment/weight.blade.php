@@ -21,7 +21,7 @@
                        @foreach ($media as $index => $media)
                         <tr>
                             <td>{{$index+1}}</td>
-                            <td>{{$media->full_name}}</td>
+                            <td>{{$media->media_name}}</td>
                             @foreach ($criteria_filtered as $criteria)
                             @csrf
                             <td>
