@@ -10,7 +10,7 @@
                     <thead>
                         <tr>
                             <th>Rank.</th>
-                            <th>Employe Name</th>
+                            <th>Media Name</th>
                             @foreach ($criteria_filtered as $criteria)
                         <th>{{$criteria->criteria_code}}<br>
                         ({{$criteria->name}})</th>

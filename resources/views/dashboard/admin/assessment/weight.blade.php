@@ -10,7 +10,7 @@
                     <thead>
                         <tr>
                             <th>No.</th>
-                            <th>Employe Name</th>
+                            <th>Media Name</th>
                             @foreach ($criteria_filtered as $criteria)
                         <th>{{$criteria->criteria_code}}<br>
                         ({{$criteria->name}})</th>
@@ -18,16 +18,16 @@
                         </tr>
                     </thead>
                     <tbody>
-                       @foreach ($employes as $index => $employe)
+                       @foreach ($media as $index => $media)
                         <tr>
                             <td>{{$index+1}}</td>
-                            <td>{{$employe->full_name}}</td>
+                            <td>{{$media->full_name}}</td>
                             @foreach ($criteria_filtered as $criteria)
                             @csrf
                             <td>
                              @foreach ($criteria->sub_criteria as $sub_criteria)
                                         
-                                            @foreach ($employe->assessment as $assessment)
+                                            @foreach ($media->assessment as $assessment)
                                                 {{($criteria->id == $assessment->criteria_id && 
                                                 $sub_criteria->weight == $assessment->weight)?$assessment->weight:''}}
                                             @endforeach

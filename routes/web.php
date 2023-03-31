@@ -36,12 +36,12 @@ Route::middleware(['auth.basic'])->prefix('dashboard')->group(function(){
     Route::post('assessment/store','AssessmentController@store')->name('assessment.store');
     Route::get('assessment/export','AssessmentController@export')->name('assessment.export');
 
-    Route::get('Media','MediaController@index')->name('Media');
-    Route::get('Media/create','MediaController@create')->name('Media.create');
-    Route::post('Media/store','MediaController@store')->name('Media.store');
-    Route::get('Media/{id}','MediaController@show')->name('Media.show');
-    Route::get('Media/{id}/edit','MediaController@edit')->name('Media.edit');
-    Route::put('Media/{id}/update','MediaController@update')->name('Media.update');
-    Route::delete('Media/{id}/delete','MediaController@destroy')->name('Media.delete');
+    Route::get('Media','MediaController@index')->name('media');
+    Route::get('Media/create','MediaController@create')->name('media.create');
+    Route::post('Media/store','MediaController@store')->name('media.store');
+    Route::get('Media/{id}','MediaController@show')->name('media.show');
+    Route::get('Media/{id}/edit','MediaController@edit')->name('media.edit');
+    Route::put('Media/{id}/update','MediaController@update')->name('media.update');
+    Route::delete('Media/{id}/delete','MediaController@destroy')->name('media.delete');
     
 });

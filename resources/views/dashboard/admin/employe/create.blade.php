@@ -12,7 +12,7 @@
 
                 <div class="card-body">
                     <div class="table-responsive">
-                        <form action="{{route('employe.store')}}" method="POST">
+                        <form action="{{route('media.store')}}" method="POST">
                             @csrf
                                 <!--<div class="form-group">
                                   <label for="full_name">Media Name</label>

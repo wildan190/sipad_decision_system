@@ -1,6 +1,6 @@
 <div class="card border-0 mb-4 mt-2">
     <div class="card-header font-weight-bold text-primary">List Assessment
-        <a href="{{route('employe.create')}}" class="btn btn-sm btn-primary float-right"><i class="fas fa-plus-square"></i> New Employe</a></a>
+        <a href="{{route('media.create')}}" class="btn btn-sm btn-primary float-right"><i class="fas fa-plus-square"></i> New Record</a></a>
         </div>
 
         <div class="card-body">
@@ -10,7 +10,7 @@
                     <thead>
                         <tr>
                             <th>No.</th>
-                            <th>Employe Name</th>
+                            <th>Media Name</th>
                             @foreach ($criterias as $criteria)
                         <th>{{$criteria->criteria_code}}<br>
                         ({{$criteria->name}})</th>
@@ -19,12 +19,12 @@
                         </tr>
                     </thead>
                     <tbody>
-                       @foreach ($employes as $index => $employe)
+                       @foreach ($media as $index => $media)
                         <tr>
                             <td>{{$index+1}}</td>
-                            <td>{{$employe->full_name}}</td>
+                            <td>{{$media->full_name}}</td>
                         <form action="{{route('assessment.store')}}" method="post">
-                            <input type="hidden" name="employe_id" value="{{$employe->id}}">
+                            <input type="hidden" name="media_id" value="{{$media->id}}">
                             @foreach ($criterias as $criteria)
                             @csrf
                             <td>
@@ -34,7 +34,7 @@
                                         @foreach ($criteria->sub_criteria as $sub_criteria)
                                         
                                         <option value="{{$sub_criteria->weight}}"
-                                            @foreach ($employe->assessment as $assessment)
+                                            @foreach ($media->assessment as $assessment)
                                                 {{($criteria->id == $assessment->criteria_id && 
                                                 $sub_criteria->weight == $assessment->weight)?'selected':''}}
                                             @endforeach

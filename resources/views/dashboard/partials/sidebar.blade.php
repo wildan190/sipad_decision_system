@@ -28,10 +28,10 @@
     </li>
     
 
-    <li class="nav-item {{\Route::current()->getName()=='employe' ? 'active' : ''}}">
-      <a class="nav-link" href="{{route('employe')}}">
+    <li class="nav-item {{\Route::current()->getName()=='media' ? 'active' : ''}}">
+      <a class="nav-link" href="{{route('media')}}">
         <i class="fas fa-fw fa-users"></i>
-        <span>Employe</span></a>
+        <span>Media</span></a>
     </li>
     
 
