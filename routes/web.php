@@ -40,7 +40,7 @@ Route::middleware(['auth.basic'])->prefix('dashboard')->group(function(){
     Route::get('Media/create','MediaController@create')->name('media.create');
     Route::post('Media/store','MediaController@store')->name('media.store');
     Route::get('Media/{id}','MediaController@show')->name('media.show');
-    Route::get('Media/{id}/edit','MediaController@edit')->name('media.edit');
+    Route::get('media/{id}/edit','MediaController@edit')->name('media.edit');
     Route::put('Media/{id}/update','MediaController@update')->name('media.update');
     Route::delete('media/{id}/delete','MediaController@destroy')->name('media.delete');
     
