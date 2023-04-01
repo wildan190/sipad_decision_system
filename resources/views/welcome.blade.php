@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>Simple Additive Weighting</title>
+        <title>Sinar Indah Padma</title>
 
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
@@ -81,9 +81,9 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                    Simple Additive
+                    Sinar Indah
                     <br/>
-                    Weighting
+                    Padma
                 </div>
 
                 {{-- <div class="links">
