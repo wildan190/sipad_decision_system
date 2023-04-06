@@ -18,8 +18,8 @@
                             <thead>
                                 <tr>
                                     <th>No.</th>
-                                    <th>Media Type</th>
-                                    <th>Size</th>
+                                    <th>Lokasi</th>
+                                    <th>Media</th>
                                     <!--<th>Birth Place</th>
                                     <th>Birth Date</th>-->
                                     <th>Address</th>

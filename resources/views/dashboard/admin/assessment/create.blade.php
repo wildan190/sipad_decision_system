@@ -10,7 +10,7 @@
                 <thead>
                     <tr>
                         <th>No.</th>
-                        <th>Media Name</th>
+                        <th>Tempat</th>
                         @foreach ($criterias as $criteria)
                         <th>{{$criteria->criteria_code}}<br>
                             ({{$criteria->name}})</th>

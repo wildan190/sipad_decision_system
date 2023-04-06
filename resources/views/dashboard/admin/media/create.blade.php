@@ -19,18 +19,21 @@
                                   <input type="text" name="full_name" class="form-control" id="full_name" aria-describedby="full_nameHelp">
                                 </div>-->
                                 <div class="form-group">
-                                  <label for="media_name">Media Type</label>
+                                  <label for="media_name">Lokasi</label>
                                   <select name="media_name" class="form-control" id="media_name">
-                                    <option value='Billboard'>Billboard</option>
-                                    <option value='VideoTron'>VideoTron</option>
-                                    <option value='Banner'>Banner</option>
+                                    <option value='Jagorawi'>Jagorawi</option>
+                                    <option value='Jakarta-Cikampek'>Jakarta-Cikampek</option>
+                                    <option value='Jakarta-Tangerang'>Jakarta-Tangerang</option>
+                                    <option value='Dalam Kota Jakarta'>Dalam Kota Jakarta</option>
+                                    <option value='Jln Tol Lingkar Luar Jkt'>Jln Tol Lingkar Luar Jkt</option>
+                                    <option value='Ulujami-Pondok Aren'>Ulujami-Pondok Aren</option>
                                   </select>
                                 </div>
                                 <div class="form-group">
-                                  <label for="size">Size Media</label>
+                                  <label for="size">Typd Media</label>
                                   <select name="size" class="form-control" id="size">
-                                    <option value='12x4'>12x4</option>
-                                    <option value='8x20'>8x20</option>
+                                    <option value='Billboard'>Billboard</option>
+                                    <option value='VideoTron'>VideoTron</option>
                                   </select>
                                 </div>
                                 <!--<div class="form-group">
