@@ -20,6 +20,8 @@ class Assessment extends Model
         }
         return $arr;
     }
+
+    //Menentukan Score
     public static function dss_saw(){
         $criterias = Criteria::orderBy('criteria_code','Asc')->has('assessment')->with('sub_criteria')->get();
         $media = Media::orderBy('id','Asc')->has('assessment')->with('assessment')->get(); 
