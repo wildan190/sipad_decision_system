@@ -4,6 +4,9 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Media;
+use App\Imports\MediaImport;
+use Illuminate\Support\Facades\Storage;
+use Maatwebsite\Excel\Facades\Excel;
 class MediaController extends Controller
 {
     //
@@ -69,5 +72,46 @@ class MediaController extends Controller
             'address'=>request('address'),
             'position'=>request('position'),
         ];
+    }
+    public function import(Request $request){
+        $this->validate($request, [
+            'file' => 'required|mimes:csv,xls,xlsx'
+        ]);
+
+        $file = $request->file('file');
+
+        // membuat nama file unik
+        $nama_file = $file->hashName();
+
+        //temporary file
+        $path = $file->storeAs('public/excel/',$nama_file);
+
+        // import data
+        $import = Excel::Import(new MediaImport(), storage_path('app/public/excel/'.$nama_file));
+
+        //remove from server
+        Storage::delete($path);
+
+        if($import) {
+            //redirect
+            return redirect()->route('media.index')->with(['success' => 'Data Berhasil Diimport!']);
+        } else {
+            //redirect
+            return redirect()->route('media.index')->with(['error' => 'Data Gagal Diimport!']);
+        }
+    }
+
+    /*public function importView(Request $request){
+        return view('importFile');
+    }
+
+    public function import(Request $request){
+        Excel::import(new MediaController, $request->file('file')->store('files'));
+        return redirect()->back();
+    }*/
+
+
+    public function exportMedia(Request $request){
+        return Excel::download(new MediaController, 'datamana.xlsx');
     }
 }

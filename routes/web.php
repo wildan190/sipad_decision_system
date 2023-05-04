@@ -43,5 +43,9 @@ Route::middleware(['auth.basic'])->prefix('dashboard')->group(function(){
     Route::get('media/{id}/edit','MediaController@edit')->name('media.edit');
     Route::put('Media/{id}/update','MediaController@update')->name('media.update');
     Route::delete('media/{id}/delete','MediaController@destroy')->name('media.delete');
+
+    Route::get('/media', 'MediaController@index')->name('media.index');
+    Route::post('/media/import', 'MediaController@import')->name('media.import');
+    Route::post('/media/export', 'MediaController@import')->name('media.export');
     
 });

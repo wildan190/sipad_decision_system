@@ -8,6 +8,10 @@ class Media extends Model
 {
     //
     protected $guarded = [];
+    protected $fillable = [
+        'media_name', 'size', 'address', 'position'
+    ];
+    
     public function assessment()
     {
         return $this->hasMany('App\Assessment');
