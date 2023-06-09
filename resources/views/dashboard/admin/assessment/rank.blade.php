@@ -15,7 +15,7 @@
                         <th>{{$criteria->criteria_code}}<br>
                             ({{$criteria->name}})</th>
                         @endforeach
-                        <th>Score</th>
+                        <th>Hasil</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -25,10 +25,10 @@
                         <td>{{$result['media_name']}}</td>
                         @foreach ($result['criteria'] as $key => $criteria)
                         <td>
-                            @if (isset($criteria['result']))
-                            {{$criteria['result']}}
+                            @if (isset($criteria['score']))
+                            {{$criteria['score']}}
                             @else
-                            N/A
+                            Kosong
                             @endif
                         </td>
                         @endforeach
@@ -37,7 +37,6 @@
                         </td>
                     </tr>
                     @endforeach
-
                 </tbody>
             </table>
         </div>
