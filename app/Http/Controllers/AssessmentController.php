@@ -14,7 +14,7 @@ class AssessmentController extends Controller
         $criterias = Criteria::orderBy('criteria_code','Asc')->with('sub_criteria')->get();
         $criteria_filtered = Criteria::orderBy('criteria_code','Asc')->has('assessment')->with('sub_criteria')->get();
         $media = Media::orderBy('id','Asc')->with('assessment')->get(); 
-        $arr = Assessment::dss_ahp();
+        $arr = Assessment::dss_ahp_saw();
         // return $arr;
         // return Assessment::getMaxMin($criterias);
         return view('dashboard.admin.assessment.index',compact('criterias','media','arr','criteria_filtered'));
@@ -22,7 +22,7 @@ class AssessmentController extends Controller
     }
     public function export(){
         $criteria_filtered = Criteria::orderBy('criteria_code','Asc')->with('sub_criteria')->get();
-        $arr = Assessment::dss_ahp();
+        $arr = Assessment::dss_ahp_saw();
         $pdf = PDF::loadview('dashboard.admin.assessment.rank',compact('criteria_filtered','arr'))->setPaper('a4', 'landscape');
     	return $pdf->download('Data Rank');
     }
