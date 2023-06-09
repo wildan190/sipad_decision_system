@@ -25,13 +25,19 @@
                         <td>{{$result['media_name']}}</td>
                         @foreach ($result['criteria'] as $key => $criteria)
                         <td>
+                            @if (isset($criteria['result']))
                             {{$criteria['result']}}
+                            @else
+                            N/A
+                            @endif
                         </td>
                         @endforeach
                         <td>
                             {{$result['score']}}
                         </td>
-                        @endforeach
+                    </tr>
+                    @endforeach
+
                 </tbody>
             </table>
         </div>
