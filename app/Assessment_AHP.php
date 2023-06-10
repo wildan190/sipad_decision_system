@@ -107,7 +107,7 @@ class Assessment_AHP extends Model
 
             $totalScore = 0;
             foreach ($criterias as $i => $criteria) {
-                $criteriaScore = 0;
+                $criteriaScore = $ahp->weight;
                 foreach ($m->ahp as $ahp) {
                     if ($ahp->criteria_id == $criteria->id) {
                         // Hitung nilai skor alternatif berdasarkan bobot relatif
