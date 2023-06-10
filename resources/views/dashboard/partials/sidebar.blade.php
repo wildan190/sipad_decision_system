@@ -40,6 +40,12 @@
         <i class="fas fa-fw fa-star-half-alt"></i>
         <span>Assessment</span></a>
     </li>
+
+    <li class="nav-item {{\Route::current()->getName()=='ahp' ? 'active' : ''}}">
+      <a class="nav-link" href="{{route('ahp')}}">
+        <i class="fas fa-fw fa-star-half-alt"></i>
+        <span>AHP Count</span></a>
+    </li>
     <hr class="sidebar-divider my-0">
 
     <li class="nav-item">

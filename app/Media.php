@@ -16,4 +16,8 @@ class Media extends Model
     {
         return $this->hasMany('App\Assessment');
     }
+
+    public function ahp(){
+        return $this->hasMany('App\Assessment_AHP');
+    }
 }

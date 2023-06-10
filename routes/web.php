@@ -36,6 +36,10 @@ Route::middleware(['auth.basic'])->prefix('dashboard')->group(function(){
     Route::post('assessment/store','AssessmentController@store')->name('assessment.store');
     Route::get('assessment/export','AssessmentController@export')->name('assessment.export');
 
+    Route::get('ahp','AhpController@index')->name('ahp');
+    Route::post('ahp/store','AhpController@store')->name('ahp.store');
+    Route::get('ahp/export','AhpController@export')->name('ahp.export');
+
     Route::get('Media','MediaController@index')->name('media');
     Route::get('Media/create','MediaController@create')->name('media.create');
     Route::post('Media/store','MediaController@store')->name('media.store');
