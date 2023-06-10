@@ -46,6 +46,12 @@
         <i class="fas fa-fw fa-star-half-alt"></i>
         <span>AHP Count</span></a>
     </li>
+
+    <li class="nav-item {{\Route::current()->getName()=='saw' ? 'active' : ''}}">
+      <a class="nav-link" href="{{route('saw')}}">
+        <i class="fas fa-fw fa-star-half-alt"></i>
+        <span>SAW Count</span></a>
+    </li>
     <hr class="sidebar-divider my-0">
 
     <li class="nav-item">

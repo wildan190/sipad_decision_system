@@ -14,7 +14,7 @@ class AhpController extends Controller
     public function index(){
         $criterias = Criteria::orderBy('criteria_code','Asc')->with('sub_criteria')->get();
         $criteria_filtered = Criteria::orderBy('criteria_code','Asc')->has('ahp')->with('sub_criteria')->get();
-        $media = Media::orderBy('id','Asc')->with('assessment')->get(); 
+        $media = Media::orderBy('id','Asc')->with('ahp')->get(); 
         $arr = Assessment_AHP::dss_ahp();
         // return $arr;
         // return Assessment::getMaxMin($criterias);
@@ -24,7 +24,7 @@ class AhpController extends Controller
     public function export(){
         $criteria_filtered = Criteria::orderBy('criteria_code','Asc')->with('sub_criteria')->get();
         $arr = Assessment_AHP::dss_ahp();
-        $pdf = PDF::loadview('dashboard.admin.assessment.rank',compact('criteria_filtered','arr'))->setPaper('a4', 'landscape');
+        $pdf = PDF::loadview('dashboard.admin.ahp.rank',compact('criteria_filtered','arr'))->setPaper('a4', 'landscape');
     	return $pdf->download('Data Rank');
     }
 

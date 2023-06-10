@@ -24,4 +24,10 @@ class Criteria extends Model
         return $this->hasMany('App\Assessment_AHP');
 
     }
+
+    public function saw(){
+
+        return $this->hasMany('App\Assessment_SAW');
+
+    }
 }
