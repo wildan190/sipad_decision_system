@@ -2,7 +2,7 @@
 
 @section('content')
 <div class="d-sm-flex align-items-center justify-content-between mb-4">
-    <h1 class="h3 mb-0 text-gray-800">Assessment</h1>
+    <h1 class="h3 mb-0 text-gray-800">SAW COUNT</h1>
     <a href="{{route('assessment.export')}}" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i class="fas fa-download fa-sm text-white-50"></i> SAW Rank</a>
 </div>
 <div class="row justify-content-center">
@@ -13,22 +13,22 @@
                 <a class="nav-link active" data-toggle="tab" href="#home">Assessment</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" data-toggle="tab" href="#menu1">Assessment Weight</a>
+                <a class="nav-link" data-toggle="tab" href="#menu1">SAW Weight</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" data-toggle="tab" href="#menu2">Result Combine</a>
+                <a class="nav-link" data-toggle="tab" href="#menu2">Result RANK</a>
             </li>
         </ul>
         <div class="tab-content shadow-sm">
 
             <div id="home" class="tab-pane active">
-                @include('dashboard.admin.assessment.create')
+                @include('dashboard.admin.saw.create')
             </div>
             <div id="menu1" class="tab-pane fade">
-                @include('dashboard.admin.assessment.weight')
+                @include('dashboard.admin.saw.weight')
             </div>
             <div id="menu2" class="tab-pane fade">
-                @include('dashboard.admin.assessment.rank')
+                @include('dashboard.admin.saw.rank')
             </div>
         </div>
     </div>

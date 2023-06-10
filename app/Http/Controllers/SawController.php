@@ -3,28 +3,29 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Assessment;
-use App\Assessment_AHP;
+//use App\Assessment;
+//use App\Assessment_AHP;
 use App\Criteria;
 use App\Media;
 Use Alert;
+use App\Assessment_SAW;
 use PDF;
-class AssessmentController extends Controller
+class SawController extends Controller
 {
     public function index(){
         $criterias = Criteria::orderBy('criteria_code','Asc')->with('sub_criteria')->get();
-        $criteria_filtered = Criteria::orderBy('criteria_code','Asc')->has('assessment')->with('sub_criteria')->get();
-        $media = Media::orderBy('id','Asc')->with('assessment')->get(); 
-        $arr = Assessment::dss_ahp_saw();
+        $criteria_filtered = Criteria::orderBy('criteria_code','Asc')->has('saw')->with('sub_criteria')->get();
+        $media = Media::orderBy('id','Asc')->with('saw')->get(); 
+        $arr = Assessment_SAW::dss_saw();
         // return $arr;
         // return Assessment::getMaxMin($criterias);
-        return view('dashboard.admin.assessment.index',compact('criterias','media','arr','criteria_filtered'));
+        return view('dashboard.admin.saw.index',compact('criterias','media','arr','criteria_filtered'));
         
     }
     public function export(){
         $criteria_filtered = Criteria::orderBy('criteria_code','Asc')->with('sub_criteria')->get();
-        $arr = Assessment::dss_ahp_saw();
-        $pdf = PDF::loadview('dashboard.admin.assessment.rank',compact('criteria_filtered','arr'))->setPaper('a4', 'landscape');
+        $arr = Assessment_SAW::dss_saw();
+        $pdf = PDF::loadview('dashboard.admin.saw.rank',compact('criteria_filtered','arr'))->setPaper('a4', 'landscape');
     	return $pdf->download('Data Rank');
     }
 
@@ -35,7 +36,7 @@ class AssessmentController extends Controller
             'weight'=>['required']
         ]);
             if (count(Criteria::get())!=count($request->weight)) {
-                return redirect()->route('assessment')->withErrors('Please Choose All Criteria Weight');
+                return redirect()->route('saw')->withErrors('Please Choose All Criteria Weight');
             }
         $arr=[];
         foreach($request['criteria_id'] as $index => $criteria_id){
@@ -48,7 +49,7 @@ class AssessmentController extends Controller
         // return $arr;
         foreach($arr as $data){
             try {
-                Assessment::updateOrCreate([
+                Assessment_SAW::updateOrCreate([
                 'media_id'=>$request['media_id'],
                 'criteria_id'=>$data['criteria_id'],
                 ],[
@@ -56,10 +57,10 @@ class AssessmentController extends Controller
                 ]);
             } catch (\Throwable $th) {
                 // return $th;
-                return redirect()->route('assessment')->withErrors('Error');
+                return redirect()->route('saw')->withErrors('Error');
             }
         }
-        return redirect()->route('assessment')->withSuccess('Success');
+        return redirect()->route('saw')->withSuccess('Success');
     }
 
     

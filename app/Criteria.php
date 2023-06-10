@@ -16,5 +16,18 @@ class Criteria extends Model
     public function assessment()
     {
         return $this->hasMany('App\Assessment');
+        //return $this->hasMany('App\Assessment_AHP');
+    }
+
+    public function ahp(){
+
+        return $this->hasMany('App\Assessment_AHP');
+
+    }
+
+    public function saw(){
+
+        return $this->hasMany('App\Assessment_SAW');
+
     }
 }
