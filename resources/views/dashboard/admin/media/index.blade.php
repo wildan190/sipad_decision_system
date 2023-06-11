@@ -25,8 +25,7 @@
                                 <th>No.</th>
                                 <th>Lokasi</th>
                                 <th>Media</th>
-                                <!--<th>Birth Place</th>
-                                    <th>Birth Date</th>-->
+                                <th>Ukuran</th>
                                 <th>Address</th>
                                 <th>Position</th>
                                 <th>Action</th>
@@ -38,8 +37,7 @@
                                 <td>{{$index+1}}</td>
                                 <td>{{$media->media_name}}</td>
                                 <td>{{$media->size}}</td>
-                                <!--<td>{{$media->birth_place}}</td>
-                                <td>{{$media->birth_date}}</td>-->
+                                <td>{{$media->ukuran}}</td>
                                 <td>{{$media->address}}</td>
                                 <td>{{$media->position}}</td>
                                 <td>

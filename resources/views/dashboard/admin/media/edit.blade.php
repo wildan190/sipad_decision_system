@@ -15,33 +15,31 @@
                         <form action="{{route('media.update',['id'=>$media->id])}}" method="POST">
                             @csrf
                             @method('put')
-                                <!--<div class="form-group">
-                                  <label for="full_name">Full Name</label>
-                                <input type="text" name="full_name" class="form-control" id="full_name" aria-describedby="full_nameHelp" value="{{$media->full_name}}">
-                                </div>-->
                                 <div class="form-group">
                                   <label for="media_name">Media Type</label>
                                   <select name="media_name" class="form-control" id="media_name">
-                                    <option value='Billboard' {{$media->media_name=='Billboard'?'selected':''}}>Billboard</option>
-                                    <option value='VideoTron' {{$media->media_name=='VideoTron'?'selected':''}}>VideoTron</option>
-                                    <option value='Banner' {{$media->media_name=='Banner'?'selected':''}}>Banner</option>
+                                    <option value='Jagorawi'>Jagorawi</option>
+                                    <option value='Jakarta-Cikampek' {{$media->media_name=='Jakarta-Cikampek'?'selected':''}}>Jakarta-Cikampek</option>
+                                    <option value='Jakarta-Tangerang'{{$media->media_name=='Jakarta-Tangerang'?'selected':''}}>Jakarta-Tangerang</option>
+                                    <option value='Dalam Kota Jakarta'{{$media->media_name=='Dalam Kota Jakarta'?'selected':''}}>Dalam Kota Jakarta</option>
+                                    <option value='Jln Tol Lingkar Luar Jkt'{{$media->media_name=='Jln Tol Lingkar Luar Jkt'?'selected':''}}>Jln Tol Lingkar Luar Jkt</option>
+                                    <option value='Ulujami-Pondok Aren' {{$media->media_name=='Ulujami-Pondok Aren'?'selected':''}}>Ulujami-Pondok Aren</option>
                                   </select>
                                 </div>
                                 <div class="form-group">
-                                  <label for="size">Size Media</label>
+                                  <label for="size">Tipe Media</label>
                                   <select name="size" class="form-control" id="size">
-                                    <option value='12x4' {{$media->size=='12x4'?'selected':''}}>12x4</option>
-                                    <option value='8x20' {{$media->size=='8x20'?'selected':''}}>8x20</option>
+                                    <option value='Billboard' {{$media->size=='Billboard'?'selected':''}}>12x4</option>
+                                    <option value='VideoTron' {{$media->size=='VideoTron'?'selected':''}}>8x20</option>
                                   </select>
                                 </div>
-                                <!--<div class="form-group">
-                                  <label for="birth_place">Place Of Birth</label>
-                                  <input type="text" name="birth_place" class="form-control" id="birth_place" aria-describedby="birth_placeHelp" value="{{$media->birth_place}}">
-                                </div>
                                 <div class="form-group">
-                                    <label for="birth_date">Date Of Birth</label>
-                                    <input type="date" name="birth_date" class="form-control" id="birth_date" aria-describedby="birth_dateHelp" value="{{$media->birth_date}}">
-                                </div>-->
+                                  <label for="ukuran">Size Media</label>
+                                  <select name="ukuran" class="form-control" id="ukuran">
+                                    <option value='20x8' {{$media->size=='20x8'?'selected':''}}>20x8</option>
+                                    <option value='24x10' {{$media->size=='24x10'?'selected':''}}>24x10</option>
+                                  </select>
+                                </div>
                                 <div class="form-group">
                                     <label for="address">Address</label>
                                     <textarea name="address" class="form-control" id="address" aria-describedby="addressHelp" >{{$media->address}}</textarea>

@@ -14,10 +14,6 @@
                     <div class="table-responsive">
                         <form action="{{route('media.store')}}" method="POST">
                             @csrf
-                                <!--<div class="form-group">
-                                  <label for="full_name">Media Name</label>
-                                  <input type="text" name="full_name" class="form-control" id="full_name" aria-describedby="full_nameHelp">
-                                </div>-->
                                 <div class="form-group">
                                   <label for="media_name">Lokasi</label>
                                   <select name="media_name" class="form-control" id="media_name">
@@ -36,14 +32,13 @@
                                     <option value='VideoTron'>VideoTron</option>
                                   </select>
                                 </div>
-                                <!--<div class="form-group">
-                                  <label for="birth_place">Place Of Birth</label>
-                                  <input type="text" name="birth_place" class="form-control" id="birth_place" aria-describedby="birth_placeHelp">
-                                </div>
                                 <div class="form-group">
-                                    <label for="birth_date">Date Of Birth</label>
-                                    <input type="date" name="birth_date" class="form-control" id="birth_date" aria-describedby="birth_dateHelp">
-                                </div>-->
+                                  <label for="ukuran">Size Media</label>
+                                  <select name="ukuran" class="form-control" id="ukuran">
+                                    <option value='20x8'>20x8</option>
+                                    <option value='24x10'>24x10</option>
+                                  </select>
+                                </div>
                                 <div class="form-group">
                                     <label for="address">Address</label>
                                     <textarea name="address" class="form-control" id="address" aria-describedby="addressHelp"></textarea>

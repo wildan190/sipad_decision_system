@@ -9,7 +9,7 @@ class Media extends Model
     //
     protected $guarded = [];
     protected $fillable = [
-        'media_name', 'size', 'address', 'position'
+        'media_name', 'size', 'ukuran', 'address', 'position'
     ];
     
     public function assessment()

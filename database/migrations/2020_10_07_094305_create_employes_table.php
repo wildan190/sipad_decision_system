@@ -16,9 +16,8 @@ class CreateEmployesTable extends Migration
         Schema::create('media', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('media_name');
-            //$table->enum('gender', ['Male', 'Female']);
             $table->string('size');
-           // $table->date('birth_date');
+            $table->string('ukuran');
             $table->string('address');
             $table->string('position')->default('admin');
             $table->timestamps();

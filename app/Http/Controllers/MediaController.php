@@ -56,9 +56,8 @@ class MediaController extends Controller
     public function validation(){
         return [
             'media_name'=>['required'],
-            //'gender'=>['required','in:Male,Female'],
             'size'=>['required'],
-            //'birth_date'=>['required'],
+            'ukuran'=>['required'],
             'address'=>['required'],
             'position'=>['required'],
         ];
@@ -66,9 +65,8 @@ class MediaController extends Controller
     public function field(){
         return [
             'media_name'=>request('media_name'),
-            //'gender'=>request('gender'),
             'size'=>request('size'),
-            //'birth_date'=>request('birth_date'),
+            'ukuran'=>request('ukuran'),
             'address'=>request('address'),
             'position'=>request('position'),
         ];
